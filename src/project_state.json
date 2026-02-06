@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Romantic, mobile-first interactive Valentine proposal single-page web app with soft pastel/glassmorphism design, floating hearts/sparkles, background music with mute toggle, playful Yes/No interactions, celebration screen with typewriter message and extra touches, and localStorage-based persistence (frontend-only) including a short romantic transition for returning accepted users.",
+  "architectural_notes": [
+    "Pure frontend-only SPA; no backend/canister.",
+    "Use localStorage to store accepted state and interaction data; on return show a 1.5–2s themed transition before routing to celebration.",
+    "Default embedded royalty-free audio track; user-controlled mute/unmute toggle.",
+    "Apply a consistent global theme across landing/transition/celebration: Playfair Display for headings, Poppins/Inter for UI text; deep plum→rose gradient background; blush-tinted glassmorphism cards with higher contrast; improved typography contrast/spacing for mobile readability."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-single-page-mobile-first-valentine-proposal-experience-with-a-soft-romantic-visual-theme-pastel-pink-rose-peach-warm-gradients-glassmorphism-cards-blur-glow-floating-hearts-and-sparkles-background-animation-gentle-entrance-animations-and-smooth-transitions-across-screens-use-elegant-cursive-headline-typography-paired-with-a-clean-modern-body-font-ensuring-readable-sizes-and-accessible-contrast",
+      "title": "Implement a single-page, mobile-first Valentine proposal experience with a soft romantic visual theme: pastel pink/rose/peach warm gradients, glassmorphism cards (blur + glow), floating hearts and sparkles background animation, gentle entrance animations, and smooth transitions across screens. Use elegant cursive headline typography paired with a clean modern body font, ensuring readable sizes and accessible contrast.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-landing-screen-as-a-full-screen-centered-proposal-card-containing-heading-text-exactly-will-you-be-my-valentine-and-a-subtitle-exactly-one-click-can-make-my-whole-day-brighter-show-animated-floating-hearts-continuously-moving-upward-behind-around-the-card",
+      "title": "Create the Landing Screen as a full-screen centered proposal card containing: heading text exactly “Will you be my Valentine?” and a subtitle exactly “One click can make my whole day brighter 💗”. Show animated floating hearts continuously moving upward behind/around the card.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-built-in-default-royalty-free-soft-romantic-instrumental-audio-track-that-loops-as-background-music-and-provide-a-visible-mute-unmute-toggle-do-not-implement-any-custom-audio-upload-ui",
+      "title": "Add a built-in default, royalty-free soft romantic instrumental audio track that loops as background music and provide a visible mute/unmute toggle. Do not implement any custom audio upload UI.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-landing-screen-buttons-with-playful-interactions-show-two-buttons-labeled-exactly-yes-and-no-make-the-yes-button-slightly-larger-and-glowing-make-the-no-button-avoid-clicks-by-moving-away-and-or-swapping-position-and-or-shrinking-when-hovered-desktop-or-tapped-mobile-add-micro-animations-for-hover-and-tap-states",
+      "title": "Implement the Landing Screen buttons with playful interactions: show two buttons labeled exactly “Yes 💖” and “No 🙈”. Make the Yes button slightly larger and glowing. Make the No button avoid clicks by moving away and/or swapping position and/or shrinking when hovered (desktop) or tapped (mobile). Add micro-animations for hover and tap states.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-clicking-yes-transition-to-a-celebration-screen-that-triggers-a-heart-burst-and-confetti-animation-with-a-screen-glow-effect-and-a-soft-zoom-display-a-message-card-that-reveals-the-provided-multi-line-text-via-a-typewriter-animation-preserving-line-breaks-exactly-as-provided",
+      "title": "On clicking “Yes 💖”, transition to a Celebration Screen that triggers a heart burst and confetti animation, with a screen glow effect and a soft zoom. Display a message card that reveals the provided multi-line text via a typewriter animation, preserving line breaks exactly as provided.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-extra-interactive-touches-on-the-celebration-screen-1-a-send-virtual-hug-button-that-triggers-a-heart-pulse-animation-2-a-hidden-surprise-text-that-fades-in-after-5-seconds-you-re-stuck-with-me-now-and-3-an-option-to-replay-the-celebration-animation",
+      "title": "Add the extra interactive touches on the Celebration Screen: (1) a “Send Virtual Hug 🤗” button that triggers a heart pulse animation, (2) a hidden surprise text that fades in after 5 seconds: “You’re stuck with me now 💞”, and (3) an option to replay the celebration animation.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-subtle-particle-glow-trail-that-follows-the-user-s-finger-touch-or-mouse-movement-across-the-page-keeping-the-effect-lightweight-and-not-interfering-with-button-interactions",
+      "title": "Implement a subtle particle/glow trail that follows the user’s finger (touch) or mouse movement across the page, keeping the effect lightweight and not interfering with button interactions.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-user-interaction-state-using-localstorage-only-no-backend-store-at-minimum-whether-the-user-has-already-clicked-yes-accepted-state-and-any-relevant-interaction-data-needed-for-the-ux-e-g-mute-state-returning-users-who-have-already-accepted-should-not-see-the-landing-proposal-again",
+      "title": "Persist user interaction state using localStorage only (no backend). Store at minimum whether the user has already clicked “Yes” (accepted state) and any relevant interaction data needed for the UX (e.g., mute state). Returning users who have already accepted should not see the landing proposal again.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-a-returning-user-has-already-clicked-yes-show-a-short-romantic-loading-transition-screen-for-1-5-2-0-seconds-before-the-celebration-screen-this-transition-should-include-a-soft-animation-e-g-floating-hearts-and-user-facing-text-exactly-opening-your-love-page",
+      "title": "When a returning user has already clicked “Yes,” show a short romantic loading/transition screen for ~1.5–2.0 seconds before the celebration screen. This transition should include a soft animation (e.g., floating hearts) and user-facing text exactly: “Opening your love page…”",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-keep-the-app-frontend-only-do-not-implement-or-require-any-new-backend-functionality-for-this-experience-ensure-the-ui-copy-is-in-english-for-all-new-user-facing-text-except-the-provided-celebration-message-which-must-remain-exactly-as-supplied",
+      "title": "Keep the app frontend-only: do not implement or require any new backend functionality for this experience. Ensure the UI copy is in English for all new user-facing text (except the provided celebration message, which must remain exactly as supplied).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-global-typography-to-use-playfair-display-for-the-main-heading-style-and-a-clean-sans-serif-inter-or-poppins-for-subtitles-buttons-and-body-text-remove-the-previous-cursive-font-usage-so-typography-is-consistent-across-the-landing-screen-returning-transition-screen-and-celebration-screen",
+      "title": "Update global typography to use Playfair Display for the main heading style and a clean sans-serif (Inter or Poppins) for subtitles, buttons, and body text; remove the previous cursive font usage so typography is consistent across the landing screen, returning transition screen, and celebration screen.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-updated-premium-dreamy-color-palette-across-the-entire-experience-by-updating-global-background-gradient-and-text-accent-colors-to-match-background-gradient-1a0f1f-3a102a-ff4d8d-main-text-color-ffffff-or-ffe6f0-yes-button-accent-glow-ff3f81-secondary-button-muted-rose-b86b8c-ensuring-contrast-and-readability-on-mobile",
+      "title": "Apply the updated premium, dreamy color palette across the entire experience by updating global background gradient and text/accent colors to match: background gradient #1a0f1f → #3a102a → #ff4d8d; main text color #ffffff or #ffe6f0; Yes-button accent glow #ff3f81; secondary button muted rose #b86b8c, ensuring contrast and readability on mobile.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-glass-card-background-with-a-blush-tinted-glass-effect-warmer-and-more-dreamy-than-semi-transparent-white-and-apply-it-consistently-to-all-glasscard-usages-including-adding-a-subtle-pink-light-bloom-behind-the-main-card-for-a-premium-look",
+      "title": "Replace the current glass card background with a blush-tinted glass effect (warmer and more dreamy than semi-transparent white) and apply it consistently to all GlassCard usages, including adding a subtle pink light bloom behind the main card for a premium look.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build landing proposal screen with glassmorphism card, romantic typography, responsive layout, floating hearts/sparkles background, and smooth entrance/transitions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add royalty-free soft romantic instrumental background music with built-in default and mute/unmute toggle (no upload)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement playful Yes/No buttons: Yes larger/glowing with micro-animations; No avoids clicks (moves/swaps/shrinks on hover/tap)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create celebration screen on Yes: heart burst + confetti, screen glow/soft zoom, and typewriter reveal of the provided final message text",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add extra interactions: 'Send Virtual Hug' heart pulse, hidden surprise text after 5s, replay celebration option, subtle particle glow following touch/mouse",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Persist acceptance and interaction state in localStorage; returning users who already accepted see a 1.5–2s romantic loading/transition ('Opening your love page…') before celebration screen",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Ensure accessibility/readability and lightweight performance for smooth animations (no login, frontend-only)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Update global typography + color palette across entire experience (landing, transition, celebration): Playfair Display for headings; Poppins/Inter for UI; improve heading weight/contrast and letter spacing; apply deep plum→rose gradient background, blush-tinted glass cards, updated text/accent colors and subtle pink bloom behind main card for a modern premium dreamy look",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine Proposal SPA (frontend-only) with music, playful buttons, celebration, and returning-user transition",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

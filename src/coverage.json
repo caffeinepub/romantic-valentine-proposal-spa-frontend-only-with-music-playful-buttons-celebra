@@ -1,0 +1,88 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-06T09:08:32.514Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-11",
+        "summary": "Update global typography to use Playfair Display for the main heading style and a clean sans-serif (Inter or Poppins) for subtitles, buttons, and body text; remove the previous cursive font usage so typography is consistent across the landing screen, returning transition screen, and celebration screen.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/screens/LandingScreen.tsx",
+          "frontend/src/screens/ReturningTransitionScreen.tsx",
+          "frontend/src/screens/CelebrationScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/screens/LandingScreen.tsx",
+          "frontend/src/screens/ReturningTransitionScreen.tsx",
+          "frontend/src/screens/CelebrationScreen.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Apply the updated premium, dreamy color palette across the entire experience by updating global background gradient and text/accent colors to match: background gradient #1a0f1f → #3a102a → #ff4d8d; main text color #ffffff or #ffe6f0; Yes-button accent glow #ff3f81; secondary button muted rose #b86b8c, ensuring contrast and readability on mobile.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/proposal/PlayfulChoiceButtons.tsx",
+          "frontend/src/screens/CelebrationScreen.tsx",
+          "frontend/src/screens/LandingScreen.tsx",
+          "frontend/src/screens/ReturningTransitionScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/proposal/PlayfulChoiceButtons.tsx",
+          "frontend/src/screens/CelebrationScreen.tsx",
+          "frontend/src/screens/LandingScreen.tsx",
+          "frontend/src/screens/ReturningTransitionScreen.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Replace the current glass card background with a blush-tinted glass effect (warmer and more dreamy than semi-transparent white) and apply it consistently to all GlassCard usages, including adding a subtle pink light bloom behind the main card for a premium look.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/romance/GlassCard.tsx",
+          "frontend/src/screens/LandingScreen.tsx",
+          "frontend/src/screens/CelebrationScreen.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/screens/LandingScreen.tsx",
+          "frontend/src/screens/CelebrationScreen.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/proposal/PlayfulChoiceButtons.tsx",
+    "frontend/src/index.css",
+    "frontend/src/screens/CelebrationScreen.tsx",
+    "frontend/src/screens/LandingScreen.tsx",
+    "frontend/src/screens/ReturningTransitionScreen.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

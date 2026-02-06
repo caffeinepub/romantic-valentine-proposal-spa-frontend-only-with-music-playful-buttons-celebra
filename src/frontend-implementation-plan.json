@@ -1,0 +1,120 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Global premium blush-glass theme: Playfair headings, dreamy gradient palette, and consistent GlassCard styling",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "summary": "Replace cursive typography with Playfair Display headings and consistent sans-serif (Inter/Poppins) for all other text across landing, transition, and celebration screens.",
+      "acceptanceCriteria": [
+        "Playfair Display is loaded and available to the app (e.g., via frontend/src/index.css and/or frontend/index.html).",
+        "No UI elements use the old cursive font (e.g., Dancing Script) for headings after the change.",
+        "LandingScreen heading (“Will you be my Valentine?”) uses Playfair Display and has increased weight/contrast and slightly improved letter spacing.",
+        "ReturningTransitionScreen main text (“Opening your love page…”) uses the same heading font styling as the landing heading (Playfair Display).",
+        "CelebrationScreen text styles remain readable on mobile; body/subtitle/button typography uses the chosen sans-serif consistently."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Remove the old cursive font import and define global typography classes/tokens: load Playfair Display for headings and a clean sans-serif (Inter or Poppins) for body/subtitles/buttons; update/replace any .font-cursive usage with a non-cursive heading class so typography stays consistent across screens."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind theme fontFamily tokens to include a Playfair Display heading font and a sans-serif body font (Inter/Poppins), and ensure existing utility usage maps to the new typography (no cursive token remains)."
+        },
+        {
+          "path": "frontend/src/screens/LandingScreen.tsx",
+          "operation": "modify",
+          "description": "Switch the main heading (“Will you be my Valentine?”) to the new Playfair Display heading class and adjust weight/contrast/letter spacing via shared utility classes (avoid reintroducing any cursive class)."
+        },
+        {
+          "path": "frontend/src/screens/ReturningTransitionScreen.tsx",
+          "operation": "modify",
+          "description": "Apply the same Playfair Display heading styling to the transition text (“Opening your love page…”) to match the landing heading style exactly via shared typography classes."
+        },
+        {
+          "path": "frontend/src/screens/CelebrationScreen.tsx",
+          "operation": "modify",
+          "description": "Ensure celebration body/button text uses the chosen sans-serif consistently (no lingering cursive classes) and remains readable on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Apply the premium dreamy palette globally: deep plum→rose multi-stop background gradient, light readable text, and consistent primary/secondary button colors (including Yes glow accent).",
+      "acceptanceCriteria": [
+        "The page background renders as a deep plum-to-rose multi-stop gradient matching the provided hex colors across landing, transition, and celebration screens.",
+        "Primary readable text on cards is light (white or blush-tinted #ffe6f0) with sufficient contrast against the card/background.",
+        "The “Yes 💖” button glow/gradient uses #ff3f81 as the accent glow color (visible but not overpowering).",
+        "Secondary buttons (including “No 🙈” styling where applicable and the Celebration replay button) use a muted rose tone consistent with #b86b8c (low emphasis) and remain readable.",
+        "All changes are implemented via shared/global styles (e.g., frontend/src/index.css and Tailwind theme tokens) rather than one-off per-screen overrides, except where necessary for layout."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global color tokens and shared component classes to match the specified palette: set the app background to a 3-stop gradient (#1a0f1f → #3a102a → #ff4d8d), set primary text to #ffffff/#ffe6f0 for readability, update .yes-button styling to use #ff3f81 for the visible glow/accent, and define shared secondary button styling aligned to #b86b8c (used for No/replay) so colors are not managed per-screen."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Align Tailwind color theme tokens/utilities with the new palette so screens can rely on shared classes (ensure romantic-* colors map to the updated global CSS variables rather than the previous pastel OKLCH values)."
+        },
+        {
+          "path": "frontend/src/components/proposal/PlayfulChoiceButtons.tsx",
+          "operation": "modify",
+          "description": "Ensure the Yes/No buttons use the globally-defined primary/secondary button classes so the Yes accent glow uses #ff3f81 and the No button uses muted rose #b86b8c without per-component custom colors."
+        },
+        {
+          "path": "frontend/src/screens/CelebrationScreen.tsx",
+          "operation": "modify",
+          "description": "Update the replay button to use the shared secondary/muted-rose button styling (consistent with #b86b8c) and ensure button text remains readable on the dark gradient background."
+        },
+        {
+          "path": "frontend/src/screens/LandingScreen.tsx",
+          "operation": "modify",
+          "description": "Confirm landing subtitle/body text uses the global light text color tokens (white/#ffe6f0) for contrast against the new gradient and blush glass card, without introducing one-off color overrides."
+        },
+        {
+          "path": "frontend/src/screens/ReturningTransitionScreen.tsx",
+          "operation": "modify",
+          "description": "Confirm transition screen text and dots remain readable on the new global 3-stop gradient using shared/global color tokens (no per-screen hardcoded palette)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Update GlassCard to a blush-tinted premium glass effect with a subtle pink bloom behind the card, consistently across all GlassCard usages.",
+      "acceptanceCriteria": [
+        "The GlassCard component styling (frontend/src/components/romance/GlassCard.tsx and/or its referenced CSS class in frontend/src/index.css) uses a blush-tinted translucent background (not plain white) with backdrop blur, border, and premium shadow/glow.",
+        "A subtle pink bloom/light spill is visible behind the card (e.g., via an absolutely-positioned blurred gradient layer) on landing and celebration screens; it must not interfere with button interactions.",
+        "The blush glass effect is used wherever GlassCard appears (at minimum: LandingScreen and CelebrationScreen) so card styling matches across screens.",
+        "The card remains readable: text does not wash out against the blush glass and dark gradient background on mobile widths."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Redesign the shared .glass-card class to use a blush-tinted translucent background (warmer than white), with backdrop blur, refined border, and premium shadow; add a subtle pink bloom layer (e.g., via a pseudo-element) behind the card with pointer-events disabled so it never blocks button interactions."
+        },
+        {
+          "path": "frontend/src/components/romance/GlassCard.tsx",
+          "operation": "modify",
+          "description": "Ensure the GlassCard wrapper supports the bloom layer and consistent stacking (e.g., keep content above the bloom and preserve interaction safety) while continuing to centralize all glass styling via the shared .glass-card class."
+        },
+        {
+          "path": "frontend/src/screens/LandingScreen.tsx",
+          "operation": "modify",
+          "description": "Verify the updated GlassCard blush glass + bloom reads well with landing content and that the bloom is visible behind the main card without impacting PlayfulChoiceButtons interactions."
+        },
+        {
+          "path": "frontend/src/screens/CelebrationScreen.tsx",
+          "operation": "modify",
+          "description": "Verify the updated GlassCard blush glass + bloom is visible behind the celebration card and maintains mobile readability (typewriter text, buttons) with no interaction interference."
+        }
+      ]
+    }
+  ]
+}

@@ -1,2 +1,3 @@
-# romantic-valentine-proposal-spa-frontend-only-with-music-playful-buttons-celebra
-Exported from Caffeine project: Romantic Valentine Proposal SPA (frontend-only) with music, playful buttons, celebration, and returning-user transition
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

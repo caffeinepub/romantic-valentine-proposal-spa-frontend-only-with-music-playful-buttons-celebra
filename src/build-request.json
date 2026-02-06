@@ -1,0 +1,100 @@
+{
+  "kind": "build_request",
+  "title": "Apply Playfair Display + premium blush-glass styling consistently across all screens",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "text": "Update global typography to use Playfair Display for the main heading style and a clean sans-serif (Inter or Poppins) for subtitles, buttons, and body text; remove the previous cursive font usage so typography is consistent across the landing screen, returning transition screen, and celebration screen.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Apply the typography and color updates to the entire experience — landing screen, loading transition, and celebration screen",
+          "Use Playfair Display for the main heading.",
+          "Use a clean readable sans-serif like “Poppins” or “Inter” for subtitles and buttons"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Playfair Display is loaded and available to the app (e.g., via frontend/src/index.css and/or frontend/index.html).",
+        "No UI elements use the old cursive font (e.g., Dancing Script) for headings after the change.",
+        "LandingScreen heading (“Will you be my Valentine?”) uses Playfair Display and has increased weight/contrast and slightly improved letter spacing.",
+        "ReturningTransitionScreen main text (“Opening your love page…”) uses the same heading font styling as the landing heading (Playfair Display).",
+        "CelebrationScreen text styles remain readable on mobile; body/subtitle/button typography uses the chosen sans-serif consistently."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Apply the updated premium, dreamy color palette across the entire experience by updating global background gradient and text/accent colors to match: background gradient #1a0f1f → #3a102a → #ff4d8d; main text color #ffffff or #ffe6f0; Yes-button accent glow #ff3f81; secondary button muted rose #b86b8c, ensuring contrast and readability on mobile.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3",
+          "msg-5"
+        ],
+        "quotes": [
+          "Change background to a soft gradient: #1a0f1f → #3a102a → #ff4d8d (deep plum to rose glow)",
+          "Main text color: #ffffff or #ffe6f0",
+          "Accent glow color for Yes button: #ff3f81 with soft outer glow",
+          "Secondary button color: muted rose #b86b8c with low emphasis",
+          "Apply the typography and color updates to the entire experience — landing screen, loading transition, and celebration screen"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page background renders as a deep plum-to-rose multi-stop gradient matching the provided hex colors across landing, transition, and celebration screens.",
+        "Primary readable text on cards is light (white or blush-tinted #ffe6f0) with sufficient contrast against the card/background.",
+        "The “Yes 💖” button glow/gradient uses #ff3f81 as the accent glow color (visible but not overpowering).",
+        "Secondary buttons (including “No 🙈” styling where applicable and the Celebration replay button) use a muted rose tone consistent with #b86b8c (low emphasis) and remain readable.",
+        "All changes are implemented via shared/global styles (e.g., frontend/src/index.css and Tailwind theme tokens) rather than one-off per-screen overrides, except where necessary for layout."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Replace the current glass card background with a blush-tinted glass effect (warmer and more dreamy than semi-transparent white) and apply it consistently to all GlassCard usages, including adding a subtle pink light bloom behind the main card for a premium look.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3",
+          "msg-5"
+        ],
+        "quotes": [
+          "Card background: semi-transparent white or blush glass effect with stronger contrast",
+          "Add subtle pink light bloom behind the main card",
+          "Use a blush-tinted glass effect for the card background instead of plain semi-transparent white."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The GlassCard component styling (frontend/src/components/romance/GlassCard.tsx and/or its referenced CSS class in frontend/src/index.css) uses a blush-tinted translucent background (not plain white) with backdrop blur, border, and premium shadow/glow.",
+        "A subtle pink bloom/light spill is visible behind the card (e.g., via an absolutely-positioned blurred gradient layer) on landing and celebration screens; it must not interfere with button interactions.",
+        "The blush glass effect is used wherever GlassCard appears (at minimum: LandingScreen and CelebrationScreen) so card styling matches across screens.",
+        "The card remains readable: text does not wash out against the blush glass and dark gradient background on mobile widths."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend-only changes; do not add or require any backend functionality.",
+    "Do not change the immutable frontend paths listed in SYSTEM_CONTEXT.",
+    "Keep existing user-facing copy in English and preserve any exact existing strings already required by earlier features (e.g., “Will you be my Valentine?”, “One click can make my whole day brighter 💗”, “Opening your love page…”)."
+  ],
+  "nonGoals": [
+    "Adding new screens, flows, or interactions beyond typography/color/glass styling updates.",
+    "Implementing any custom audio upload or backend persistence.",
+    "Introducing third-party auth or any non-Internet-Computer-supported integrations."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

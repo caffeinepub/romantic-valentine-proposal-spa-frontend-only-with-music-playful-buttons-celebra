@@ -1,0 +1,70 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-global-typography-to-use-playfair-display-for-the-main-heading-style-and-a-clean-sans-serif-inter-or-poppins-for-subtitles-buttons-and-body-text-remove-the-previous-cursive-font-usage-so-typography-is-consistent-across-the-landing-screen-returning-transition-screen-and-celebration-screen",
+      "featureTitle": "Update global typography to use Playfair Display for the main heading style and a clean sans-serif (Inter or Poppins) for subtitles, buttons, and body text; remove the previous cursive font usage so typography is consistent across the landing screen, returning transition screen, and celebration screen.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/screens/CelebrationScreen.tsx",
+        "frontend/src/screens/LandingScreen.tsx",
+        "frontend/src/screens/ReturningTransitionScreen.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-the-updated-premium-dreamy-color-palette-across-the-entire-experience-by-updating-global-background-gradient-and-text-accent-colors-to-match-background-gradient-1a0f1f-3a102a-ff4d8d-main-text-color-ffffff-or-ffe6f0-yes-button-accent-glow-ff3f81-secondary-button-muted-rose-b86b8c-ensuring-contrast-and-readability-on-mobile",
+      "featureTitle": "Apply the updated premium, dreamy color palette across the entire experience by updating global background gradient and text/accent colors to match: background gradient #1a0f1f → #3a102a → #ff4d8d; main text color #ffffff or #ffe6f0; Yes-button accent glow #ff3f81; secondary button muted rose #b86b8c, ensuring contrast and readability on mobile.",
+      "files": [
+        "frontend/src/components/proposal/PlayfulChoiceButtons.tsx",
+        "frontend/src/index.css",
+        "frontend/src/screens/CelebrationScreen.tsx",
+        "frontend/src/screens/LandingScreen.tsx",
+        "frontend/src/screens/ReturningTransitionScreen.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-replace-the-current-glass-card-background-with-a-blush-tinted-glass-effect-warmer-and-more-dreamy-than-semi-transparent-white-and-apply-it-consistently-to-all-glasscard-usages-including-adding-a-subtle-pink-light-bloom-behind-the-main-card-for-a-premium-look",
+      "featureTitle": "Replace the current glass card background with a blush-tinted glass effect (warmer and more dreamy than semi-transparent white) and apply it consistently to all GlassCard usages, including adding a subtle pink light bloom behind the main card for a premium look.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/screens/CelebrationScreen.tsx",
+        "frontend/src/screens/LandingScreen.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

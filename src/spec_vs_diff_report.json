@@ -1,0 +1,28 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-06T09:08:32.511Z",
+  "summary": "Diff implements the requested global font loading and font classes (Playfair Display for headings, Poppins/Inter for body), applies the specified plum→rose background gradient and romantic color tokens, updates buttons to use the new accent/muted rose palette, and updates GlassCard to a blush-tinted glass effect with a pink bloom pseudo-element. One acceptance criterion about preferring shared/global styling over one-off overrides appears not fully met due to inline styles on the Celebration replay button.",
+  "missing_requirements": [
+    {
+      "id": "REQ-12",
+      "requirement": "All changes are implemented via shared/global styles (e.g., frontend/src/index.css and Tailwind theme tokens) rather than one-off per-screen overrides, except where necessary for layout.",
+      "reason": "CelebrationScreen applies secondary button styling via inline background/border styles instead of a shared/global class or token-based style, which conflicts with the stated preference for shared/global styling for palette updates.",
+      "evidence": [
+        "frontend/src/screens/CelebrationScreen.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/proposal/PlayfulChoiceButtons.tsx",
+    "frontend/src/index.css",
+    "frontend/src/screens/CelebrationScreen.tsx",
+    "frontend/src/screens/LandingScreen.tsx",
+    "frontend/src/screens/ReturningTransitionScreen.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
